@@ -1,4 +1,5 @@
 #include "Passenger.h"
+#include <iostream>
 
 using namespace std;
 
@@ -29,5 +30,10 @@ namespace AirlineApp {
 
 	int Passenger::getTicketNumber() const {
 		return mTicketNumber;
+	}
+
+	void Passenger::displayPassenger() const {
+		cout << "TicketNumber:" << getTicketNumber() << "Name:"
+			<< getLastName() << "," << getFirstName() << endl;
 	}
 }
