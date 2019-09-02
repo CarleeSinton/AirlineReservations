@@ -10,7 +10,6 @@ namespace AirlineApp {
 		Passenger(const std::string& firstName, const std::string& lastName);
 
 		void displayPassenger() const;
-		void displayFlight() const;
 
 		void setFirstName(const std::string& firstName);
 		const std::string& getFirstName() const;
@@ -26,7 +25,5 @@ namespace AirlineApp {
 		std::string mFirstName;
 		std::string mLastName;
 		int mTicketNumber;
-		std::string mDeparture;
-		std::string mArrival;
 	};
 }
