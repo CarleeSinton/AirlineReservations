@@ -2,26 +2,73 @@
 //
 
 #include <iostream>
+#include "Database.h"
+using namespace AirlineApp;
 using namespace std;
 
+int displayMenu();
+void addPassenger(Database& db);
+void getPassenger(Database& db);
 
 int main()
 {
+	Database passengersDb;
+	passengersDb.addFlight();
+	passengersDb.addFlight();
+	passengersDb.addFlight();
+	passengersDb.addFlight();
+	passengersDb.addFlight();
+
 	while (true) {
 		int selection = displayMenu();
 		switch (selection) {
-		case 0:
-			return 0;
-		case 1:
-		case 2:
-		case 3:
-		case 4:
-		case 5:
-		default:
-			cerr << "Unknown command. Please try again." << endl;
-			break;
+			case 0:
+				return 0;
+			case 1: 
+				addPassenger(passengersDb);
+				break;
+			case 2:
+				passengersDb.printFlights;
+				break;
+			case 3:
+				getPassenger(passengersDb);
+				break;
+			case 4:
+			case 5:
+			default:
+				cerr << "Unknown command. Please try again." << endl;
+				break;
+
 		}
- }
+	}
+}
+
+void addPassenger(Database& db)
+{
+	string firstName;
+	string lastName;
+
+	cout << "First Name: ";
+	cin >> firstName;
+	cout << "Last Name:  ";
+	cin >> lastName;
+
+	db.addPassenger(firstName, lastName);
+
+	cout << "Thanks " << firstName << " " << lastName << "!" << endl;
+	cout << "Ticket Information: " << endl;
+
+	db.getPassenger(firstName, lastName).displayPassenger();
+}
+
+void getPassenger(Database& db)
+{
+	int ticketNumber;
+
+	cout << "Ticket Number: ";
+	cin >> ticketNumber;
+
+	db.getPassenger(ticketNumber).displayPassenger();
 }
 
 int displayMenu()
@@ -29,9 +76,9 @@ int displayMenu()
 	int selection;
 	cout << endl;
 	cout << "CS Airways' Reservations Menu: " << endl;
-	cout << "1. Reserve a seat" << endl;
+	cout << "1. Reserve a seat - Add a passenger" << endl;
 	cout << "2. Flight Schedule" << endl;
-	cout << "3. Display Passenger info" << endl;
+	cout << "3. Display Passenger info - get a passenger" << endl;
 	cout << "4. Flight Details" << endl;
 	cout << "5. Ticket information" << endl;
 	cout << "0. Exit" << endl;
@@ -40,7 +87,6 @@ int displayMenu()
 
 	return selection;
 }
-
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
 // Debug program: F5 or Debug > Start Debugging menu
 

@@ -33,7 +33,19 @@ namespace AirlineApp {
 	}
 
 	void Passenger::displayPassenger() const {
-		cout << "TicketNumber:" << getTicketNumber() << "Name:"
-			<< getLastName() << "," << getFirstName() << endl;
+		cout << "Name:" << getFirstName() << " " << getLastName() << endl;
+		cout << "TicketNumber: " << getTicketNumber() << endl;
+		
+	}
+
+	int mFlightNumber = 1234;
+	string mDeparture = "8:00 A.M.";
+	string mArrival = "9:00 A.M.";
+
+	void Passenger::displayFlight() const {
+		cout << "Flight Information: " << endl;
+		cout << "Flight Number: " << mFlightNumber << endl;
+		cout << "Departure Time" << mDeparture << endl;
+		cout << "Arrival Time" << mArrival << endl;
 	}
 }
