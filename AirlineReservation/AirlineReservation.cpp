@@ -13,11 +13,6 @@ void getPassenger(Database& db);
 int main()
 {
 	Database passengersDb;
-	passengersDb.addFlight();
-	passengersDb.addFlight();
-	passengersDb.addFlight();
-	passengersDb.addFlight();
-	passengersDb.addFlight();
 
 	while (true) {
 		int selection = displayMenu();
@@ -28,7 +23,7 @@ int main()
 				addPassenger(passengersDb);
 				break;
 			case 2:
-				passengersDb.printFlights;
+				cout << "option 2";
 				break;
 			case 3:
 				getPassenger(passengersDb);
