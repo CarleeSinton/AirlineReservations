@@ -16,8 +16,11 @@ namespace AirlineApp {
 		Passenger& addPassenger(const std::string& firstName, const std::string& lastName);
 		Passenger& getPassenger(int ticketNumber);
 		Passenger& getPassenger(const std::string& firstName, const std::string& lastName);
+		
 		Flight& addFlight();
 		
+		Flight& getFlight(int flightNumber);
+
 		void printFlights() const;
 
 	private:

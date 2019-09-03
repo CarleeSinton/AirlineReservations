@@ -10,6 +10,7 @@ int displayMenu();
 void addPassenger(Database& db);
 void getPassenger(Database& db);
 void addFlight(Database& db);
+void getFlight(Database& db);
 
 int main()
 {
@@ -29,7 +30,7 @@ int main()
 			getPassenger(passengersDb);
 			break;
 		case 4:
-			cout << "option 4";
+			getFlight(passengersDb);
 		case 5:
 		default:
 			cerr << "Unknown command. Please try again." << endl;
@@ -37,6 +38,18 @@ int main()
 
 		}
 	}
+}
+
+void getFlight(Database& db) {
+	int flightNumber;
+
+	cout << endl;
+	cout << "Please Enter the Flight Number:";
+	cin >> flightNumber;
+
+	cout << "Flight Number" << "        " << "Departure Time" << "        " << "Arrival Time" << endl;
+
+	db.getFlight(flightNumber).displayFlight();
 }
 
 void addFlight(Database& db) {
