@@ -33,8 +33,6 @@ namespace AirlineApp {
 		}
 	}
 
-	
-
 	Passenger& Database::getPassenger(int ticketNumber) {
 
 		for (auto& passenger : mPassengers)
@@ -57,5 +55,14 @@ namespace AirlineApp {
 			}
 		}
 		throw logic_error("Ticket Number Not Found");
+	}	
+	
+	Flight& Database::getFlight(int flightNumber) {
+		for (auto& flight : mFlights)
+		{
+			if (flight.getFlightNumber() == flightNumber) {
+				return flight;
+			}
+		}
 	}
 }
