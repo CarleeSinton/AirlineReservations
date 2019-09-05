@@ -7,7 +7,7 @@ using namespace AirlineApp;
 using namespace std;
 
 int displayMenu();
-void addPassenger(Database& db);
+void addPassenger(Database& db, int flightSelection);
 void getPassenger(Database& db);
 void addFlight(Database& db);
 void getFlight(Database& db);
@@ -26,10 +26,38 @@ int main()
 		case 0:
 			return 0;
 		case 1:
-			//add switch case here
-			selectFlight(passengersDb);
-			addPassenger(passengersDb);
+		{
+		int flightSelection = selectFlight(passengersDb);
+		//add switch case here
+		switch (flightSelection) {
+		case 0:
 			break;
+		case 1:
+			cout << "You picked flight 100" << endl;
+			addPassenger(passengersDb, flightSelection);
+			break;
+		case 2:
+			cout << "You picked flight 101" << endl;
+			addPassenger(passengersDb, flightSelection);
+			break;
+		case 3:
+			cout << "You picked flight 102" << endl;
+			addPassenger(passengersDb, flightSelection);
+			break;
+		case 4:
+			cout << "You picked flight 103" << endl;
+			addPassenger(passengersDb, flightSelection);
+			break;
+		case 5:
+			cout << "You picked flight 104" << endl;
+			addPassenger(passengersDb, flightSelection);
+			break;
+		default:
+			cerr << "Unknown command. Please try again." << endl;
+			break;
+		}
+		break;
+		}
 		case 2:
 			printFlight(passengersDb);
 			break;
@@ -38,6 +66,7 @@ int main()
 			break;
 		case 4:
 			getFlight(passengersDb);
+			break;
 		case 5:
 		default:
 			cerr << "Unknown command. Please try again." << endl;
@@ -73,7 +102,7 @@ void printFlight(Database& db) {
 	db.printFlights();
 }
 
-void addPassenger(Database& db)
+void addPassenger(Database& db, int flightSelection)
 {
 	string firstName;
 	string lastName;
@@ -120,20 +149,22 @@ int selectFlight(Database& db)
 	db.getFlight(104).displayFlight();
 	cout << endl;
 	cout << endl;
-	cout << "0. Exit" << endl;
+	cout << "0. Return to main menu." << endl;
 	cout << endl;
 	cin >> flightSelection;
 
 	return flightSelection;
 }
 
+
 int displayMenu()
 {
 	int selection;
 	cout << endl;
-	cout << "Welcome to CS Airways' Daily Flights Seattle to Vancouver!" << endl;
+	cout << "Welcome to CS Airways." << endl; 
+	cout << "We are excited to offer daily flights from Seattle to Vancouver!" << endl;
 	cout << endl;
-	cout << "Reservations Menu: " << endl;
+	cout << "Please Select an Option: " << endl;
 	cout << "1. Reserve a seat" << endl;
 	cout << "2. Flight Schedule" << endl;
 	cout << "3. Display Passenger information" << endl;

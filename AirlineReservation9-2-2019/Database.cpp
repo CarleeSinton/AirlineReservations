@@ -8,15 +8,19 @@ using namespace std;
 namespace AirlineApp {
 
 
-	Passenger& Database::addPassenger(const string& firstName, const string& lastName) {
+	Passenger& Database::addPassenger(Flight& flight, const string& firstName, const string& lastName, int flightNumber) {
 
-		Passenger thePassenger(firstName, lastName);
-		thePassenger.setTicketNumber(mNextTicketNumber++);
-		mPassengers.push_back(thePassenger);
+		Passenger newPassenger(firstName, lastName);
+		newPassenger.setTicketNumber(mNextTicketNumber++);
+		newPassenger.setSeatNumber(flight.getSeatNumber(mNextIndexSeats++));
+		newPassenger.setFlightNumber(flightNumber);
+		mPassengers.push_back(newPassenger);
+		
 
 		return mPassengers[mPassengers.size() - 1];
 	}
 
+	 
 	Flight& Database::addFlight() {
 		Flight tempFlight;
 		tempFlight.setFlightNumber(mNextFlightNumber++);

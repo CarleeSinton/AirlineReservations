@@ -1,5 +1,7 @@
 #include "Passenger.h"
+#include "Flight.h"
 #include <iostream>
+#include "Flight.cpp"
 
 using namespace std;
 
@@ -33,8 +35,32 @@ namespace AirlineApp {
 		return mTicketNumber;
 	}
 
+	void Passenger::setSeatNumber(const string& seatNumber) {
+		mSeatNumber = seatNumber;
+	}
+
+	const string& Passenger::getSeatNumber() const {
+		return mSeatNumber;
+	}
+
+	void Passenger::setFlightNumber(int flightNumber) {
+		mFlightNumber = flightNumber;
+	}
+
+	int Passenger::getFlightNumber() const {
+		return mFlightNumber;
+	}
+
 	void Passenger::displayPassenger() const {
-		cout << "Name:" << getFirstName() << " " << getLastName() << endl;
+		cout << "Name: " << getFirstName() << " " << getLastName() << endl;
 		cout << "Ticket Number: " << getTicketNumber() << endl;
+	}
+
+	void Passenger::displayTicketInformation() const {
+		cout << "Name: " << getFirstName() << " " << getLastName() << endl;
+		cout << "Ticket Number: " << getTicketNumber() << endl;
+		cout << "Seat Number: " << getSeatNumber() << endl;
+		cout << "Flight Number: " << getFlightNumber() << endl;
+
 	}
 }
