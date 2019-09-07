@@ -5,20 +5,13 @@ using namespace std;
 
 namespace AirlineApp {
 
-	Passenger::Passenger(const string& firstName, const string& lastName) :
-		mFirstName(firstName), mLastName(lastName)
+	Passenger::Passenger(const string& firstName, const string& lastName, const string seatNumber) :
+		mFirstName(firstName), mLastName(lastName), mPassengerSeatNumber(seatNumber)
 	{ }
 
-	void Passenger::setFirstName(const string& firstName) {
-		mFirstName = firstName;
-	}
 
 	const string& Passenger::getFirstName() const {
 		return mFirstName;
-	}
-
-	void Passenger::setLastName(const string& lastName) {
-		mLastName = lastName;
 	}
 
 	const string& Passenger::getLastName() const {
@@ -33,8 +26,22 @@ namespace AirlineApp {
 		return mTicketNumber;
 	}
 
+	const string& Passenger::getPassengerSeatNumber() const {
+		return mPassengerSeatNumber;
+	}
+
 	void Passenger::displayPassenger() const {
-		cout << "Name:" << getFirstName() << " " << getLastName() << endl;
+		cout << endl;
+		cout << "Name: " << getFirstName() << " " << getLastName() << endl;
 		cout << "Ticket Number: " << getTicketNumber() << endl;
+		cout << endl;
+	}
+
+	void Passenger::displayTicketInformation() const {
+		cout << endl;
+		cout << "Name: " << getFirstName() << " " << getLastName() << endl;
+		cout << "Ticket Number: " << getTicketNumber() << endl;
+		cout << "Seat Number: " << getPassengerSeatNumber() << endl;
+		cout << endl;
 	}
 }

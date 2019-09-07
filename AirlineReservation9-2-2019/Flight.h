@@ -1,6 +1,7 @@
 #pragma once
 #include <string>
 #include <map>
+#include <vector>
 
 namespace AirlineApp {
 
@@ -11,7 +12,7 @@ namespace AirlineApp {
 		void setFlightNumber(int ticketNumber);
 		int getFlightNumber() const;
 		
-		void setDepartureTime(int );
+		void setDepartureTime(int departureTime);
 		int getDepartureTime() const;
 
 		void setArrivalTime(int arrivalTime);
@@ -21,6 +22,5 @@ namespace AirlineApp {
 		int mFlightNumber;
 		int mDepartureTime;
 		int mArrivalTime;
-		std::map<std::string, std::string> seats;
 	};
 }

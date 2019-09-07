@@ -5,23 +5,26 @@ namespace AirlineApp {
 	class Passenger {
 	public:
 		Passenger() = default;
-		Passenger(const std::string& firstName, const std::string& lastName);
+		Passenger(const std::string& firstName, const std::string& lastName, const std::string seatNumber);
 
 		void displayPassenger() const;
+		void displayTicketInformation() const;
 
-		void setFirstName(const std::string& firstName);
 		const std::string& getFirstName() const;
 
-		void setLastName(const std::string& lastName);
 		const std::string& getLastName() const;
 
 		void setTicketNumber(int ticketNumber);
 		int getTicketNumber() const;
 
+		const std::string& getPassengerSeatNumber() const;
+
 
 	private:
 		std::string mFirstName;
 		std::string mLastName;
-		int mTicketNumber = 1;
+		std::string mPassengerSeatNumber;
+		int mTicketNumber;
+		int mPassengerFlightNumber;
 	};
 }
