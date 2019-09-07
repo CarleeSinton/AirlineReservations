@@ -1,0 +1,7 @@
+﻿C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(452,5): warning MSB8028: The intermediate directory (x64\Debug\) contains files shared from another project (AirlineReservation9-2-2019.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+  AirlineReservation.cpp
+  Database.cpp
+  Flight.cpp
+  Generating Code...
+C:\Users\Carleen\Downloads\AirlineReservation9-2-2019 SWAPNIL\AirlineReservation9-2-2019\Database.cpp(79): warning C4715:  'AirlineApp::Database::getFlight': not all control paths return a value
+  AirlineReservation9-2-2019.vcxproj -> C:\Users\Carleen\Downloads\AirlineReservation9-2-2019 SWAPNIL\AirlineReservation9-2-2019\x64\Debug\AirlineReservation.exe

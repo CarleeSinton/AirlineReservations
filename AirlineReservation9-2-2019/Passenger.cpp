@@ -1,26 +1,17 @@
 #include "Passenger.h"
-#include "Flight.h"
 #include <iostream>
-#include "Flight.cpp"
 
 using namespace std;
 
 namespace AirlineApp {
 
-	Passenger::Passenger(const string& firstName, const string& lastName) :
-		mFirstName(firstName), mLastName(lastName)
+	Passenger::Passenger(const string& firstName, const string& lastName, const string seatNumber) :
+		mFirstName(firstName), mLastName(lastName), mPassengerSeatNumber(seatNumber)
 	{ }
 
-	void Passenger::setFirstName(const string& firstName) {
-		mFirstName = firstName;
-	}
 
 	const string& Passenger::getFirstName() const {
 		return mFirstName;
-	}
-
-	void Passenger::setLastName(const string& lastName) {
-		mLastName = lastName;
 	}
 
 	const string& Passenger::getLastName() const {
@@ -35,32 +26,22 @@ namespace AirlineApp {
 		return mTicketNumber;
 	}
 
-	void Passenger::setSeatNumber(const string& seatNumber) {
-		mSeatNumber = seatNumber;
-	}
-
-	const string& Passenger::getSeatNumber() const {
-		return mSeatNumber;
-	}
-
-	void Passenger::setFlightNumber(int flightNumber) {
-		mFlightNumber = flightNumber;
-	}
-
-	int Passenger::getFlightNumber() const {
-		return mFlightNumber;
+	const string& Passenger::getPassengerSeatNumber() const {
+		return mPassengerSeatNumber;
 	}
 
 	void Passenger::displayPassenger() const {
+		cout << endl;
 		cout << "Name: " << getFirstName() << " " << getLastName() << endl;
 		cout << "Ticket Number: " << getTicketNumber() << endl;
+		cout << endl;
 	}
 
 	void Passenger::displayTicketInformation() const {
+		cout << endl;
 		cout << "Name: " << getFirstName() << " " << getLastName() << endl;
 		cout << "Ticket Number: " << getTicketNumber() << endl;
-		cout << "Seat Number: " << getSeatNumber() << endl;
-		cout << "Flight Number: " << getFlightNumber() << endl;
-
+		cout << "Seat Number: " << getPassengerSeatNumber() << endl;
+		cout << endl;
 	}
 }
