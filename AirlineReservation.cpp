@@ -98,9 +98,11 @@ void getFlight(Database& db) {
 	cout << "Please Enter the Flight Number:";
 	cin >> flightNumber;
 
+	cout << endl;
 	cout << "Flight Number" << "        " << "Departure Time" << "        " << "Arrival Time" << endl;
-
+	cout << endl;
 	db.getFlight(flightNumber).displayFlight();
+	cout << endl;
 }
 
 void addFlight(Database& db) {
@@ -113,7 +115,9 @@ void addFlight(Database& db) {
 
 void printFlight(Database& db) {
 	cout << "Flights from Seattle to Vancouver:" << endl;
+	cout << endl;
 	cout << "Flight Number" << "        " << "Departure Time" << "        " << "Arrival Time" << endl;
+	cout << endl;
 	db.printFlights();
 }
 
@@ -129,11 +133,12 @@ void addPassenger(Database& db, int flightSelection)
 
 	db.addPassenger(flight, firstName, lastName);
 
+	cout << endl;
 	cout << "Thanks " << firstName << " " << lastName << "!" << endl;
+	cout << endl;
 	cout << "Ticket Information: " << endl;
 
 	db.getPassenger(firstName, lastName).displayPassenger();
-	db.getPassenger(firstName, lastName).displayTicketInformation();
 }
 
 void getPassenger(Database& db)
@@ -153,6 +158,7 @@ int selectFlight(Database& db)
 	cout << "Please choose a flight: " << endl;
 	cout << endl;
 	cout << "Flight Number" << "        " << "Departure Time" << "        " << "Arrival Time" << endl;
+	cout << endl;
 	cout << "1. ";
 	db.getFlight(100).displayFlight();
 	cout << "2. ";
