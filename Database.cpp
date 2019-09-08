@@ -7,18 +7,6 @@ using namespace std;
 
 namespace AirlineApp {
 
-	std::string mSeats[40] = {
-		"1A", "1B", "1C", "1D",
-		"2A", "2B", "2C", "2D",
-		"3A", "3B", "3C", "3D",
-		"4A", "4B", "4C", "4D",
-		"5A", "5B", "5C", "5D",
-		"6A", "6B", "6C", "6D",
-		"7A", "7B", "7C", "7D",
-		"8A", "8B", "8C", "8D",
-		"9A", "9B", "9C", "9D",
-		"10A", "10B", "10C", "10D"
-	};
 
 	Passenger& Database::addPassenger(Flight& flight, const string& firstName, const string& lastName) {
 		string temp = "";
@@ -35,7 +23,7 @@ namespace AirlineApp {
 			temp = std::to_string(mSeatNumber) + "A";
 		}
 		Passenger newPassenger(firstName, lastName, temp);
-		mSeatNumber++;
+		mSeatNumber = ((rand() % 50) + 1);
 		newPassenger.setTicketNumber(mNextTicketNumber++);
 		mPassengers.push_back(newPassenger);
 		return mPassengers[mPassengers.size() - 1];

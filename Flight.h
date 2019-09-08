@@ -19,7 +19,6 @@ namespace AirlineApp {
 		int getArrivalTime() const;
 
 	private:
-		int mCurrentSeat;
 		int mFlightNumber;
 		int mDepartureTime;
 		int mArrivalTime;

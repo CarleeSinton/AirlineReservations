@@ -19,9 +19,6 @@ namespace AirlineApp {
 
 		const std::string& getPassengerSeatNumber() const;
 
-		void setPassengerFlightNumber(int flightPassengerNumber);
-		int getPassengerFlightNumber() const;
-
 
 	private:
 		std::string mFirstName;

@@ -5,11 +5,11 @@
 #include "Flight.h"
 
 namespace AirlineApp {
-	const int kFirstTicketNumber = 10;
+	const int kFirstTicketNumber = 1000;
 	const int kFirstFlightNumber = 100;
 	const int kFirstDepartureTime = 5;
 	const int kFirstArrivalTime = 6;
-	const int kSeatNumber = 0;
+	const int kSeatNumber = 1;
 
 
 	class Database {
@@ -26,7 +26,6 @@ namespace AirlineApp {
 	private:
 		std::vector<Passenger> mPassengers;
 		std::vector<Flight> mFlights;
-		std::string mSeats[40];
 		int mNextTicketNumber = kFirstTicketNumber;
 		int mNextFlightNumber = kFirstFlightNumber;
 		int mNextDepartureTime = kFirstDepartureTime;

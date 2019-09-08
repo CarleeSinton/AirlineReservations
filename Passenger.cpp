@@ -30,22 +30,18 @@ namespace AirlineApp {
 		return mPassengerSeatNumber;
 	}
 
-	void Passenger::setPassengerFlightNumber(int flightPassengerNumber) {
-		mPassengerFlightNumber = flightPassengerNumber;
-	}
-
-	int Passenger::getPassengerFlightNumber() const {
-		return mPassengerFlightNumber;
-	}
-
 	void Passenger::displayPassenger() const {
+		cout << endl;
 		cout << "Name: " << getFirstName() << " " << getLastName() << endl;
 		cout << "Ticket Number: " << getTicketNumber() << endl;
+		cout << endl;
 	}
 
 	void Passenger::displayTicketInformation() const {
+		cout << endl;
 		cout << "Name: " << getFirstName() << " " << getLastName() << endl;
 		cout << "Ticket Number: " << getTicketNumber() << endl;
 		cout << "Seat Number: " << getPassengerSeatNumber() << endl;
+		cout << endl;
 	}
 }
