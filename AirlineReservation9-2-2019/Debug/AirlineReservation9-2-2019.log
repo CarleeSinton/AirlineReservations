@@ -1,3 +1,0 @@
-﻿C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(452,5): warning MSB8028: The intermediate directory (Debug\) contains files shared from another project (AirlineReservation9-2-2019.vcxproj).  This can lead to incorrect clean and rebuild behavior.
-  AirlineReservation.cpp
-  AirlineReservation9-2-2019.vcxproj -> C:\Users\Carleen\Downloads\AirlineReservation9-2-2019 SWAPNIL\AirlineReservation9-2-2019\Debug\AirlineReservation.exe
